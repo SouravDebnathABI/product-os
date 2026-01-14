@@ -1,0 +1,113 @@
+﻿ID,Title 1,Title 2,Description,Acceptance Criteria,Start Date,Due Date,Parent,Tags,Figma Link,Work Item Type,Priority,Iteration Path,State,Reason,Assigned To,Area Path,Value Area,Created By,Associated Context,Activated By,Application Type,Is Automated,Issue,Repro Steps,Phase of Detection,Test Suite Type,Test Suite Type Id,Type of Testing
+142150,Conversation Data Management,,"As a user, I need the system to handle high conversation volumes without performance degradation so I can rely on Insights Copilot for critical business decisions.",,1/5/2026 5:30,,109948,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,"Ramachandra, Ashwini",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142151,,Ensure system can handle production conversation volumes,"As a business user, I need the system to maintain fast response times even during peak usage hours so my analysis workflow isn't disrupted",**Need to revisit and set success criteria**- Select optimal database for conversation history management for engine irrespective of app or together- System maintains <2s response time for 200+ concurrent users- No conversation data loss under load,1/5/2026 5:30,,142150,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Bhowmick, Rahul",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142152,,"Optimize Redis storage - resource, access and security","As a user, I need my conversation data to be secure and properly isolated so I can trust the system with sensitive business information and other system activities don't impact my experience",- Dedicated Redis resource created if Redis chosen as resource for conversation management- Performance isolated from other services- User data properly isolated- Access controls implemented- Storage optimization reduces latency by XX%,1/5/2026 5:30,,142150,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Ramachandra, Ashwini",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142794,,App conversation storage,,"* Tree structure is not required for Edit/Regenerate. Need to check for UI rendering
+*  Whole history cannot be provided from engine as API will be overloaded. BE should handle conversation history.",,,142150,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Paudel, Aashish(Global-V)",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142209,Intelligent Conversation Experience,,"As a user, I need Insights Copilot to intelligently understand my questions and dynamically choose the best approach to answer them so I get accurate insights without having to specify how to retrieve data",,1/5/2026 5:30,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142415,,UAT with beta users using Figma prototypes for end state alignment,,"* Prototype demonstrates end state with chat bar and smart flows integrated in the agentic orchestration
+* Set expectations on current Dev experiment and how it is different from the Prototype * interim staging vs end state
+* User feedback on 5 sets of flows -
+  1. Chatbar
+  2. Loader (basic)
+  3. Response and artefacts
+  4. Sources and Citations
+  5. Charts \& Tables
+  6. Smart Flows",1/5/2026 5:30,1/9/2026 0:00,142209,user-research,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Natarajan, Nitin",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142416,,Usecase MLE onboarding to Chat+ with testing guidelines,,"* Walkthrough to usecase MLEs on changelog, new architecture, prompt structure* Baseline for testing and feedback collection for individual usecases* Separate session for prompting guidelines, Langfuse onboarding - tracing, feedback, GT management and testing""* Prompting guidelines for new components - planner, evaluator, final answer tool and updates for existing tools",1/5/2026 5:30,1/16/2026 0:00,142209,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Natarajan, Nitin",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142780,,Conversation Name for history sidebar,,"* Conversation name generated using the first question
+* Generation is async to not delay responses
+* In case latency is high or generation fails, default to question 
+* Populate conversation history sidebar using this name replacing ""New Chat""",,,142209,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142781,,Clarifications from user,,"* When Insights Copilot is not sure about the query or needs more information to respond, it can ask user for clarification
+* Clarifications can be asked in planning step as well as during tool execution
+* Clarificatory questions should be easy to understand and respond to.",,,142209,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142210,Rich Content Responses with Analytis Templates/Smart Flows,,"**What are Smart Flows/ Analysis Templates?**    Insights Copilot uses pre-defined functions to generate an answer in a known workflow from structured datasets as per business use case consistently and accurately. Not every question is going to be addressed through analysis templates, a portion of questions will still be generated using NL2SQL.**What does Analysis Templates solve for?**  *   **Improved control over answer structure**    *  Picking KPIs and Answer sources    *  Summarization    *  Deterministic Visualizations - Tables and Charts*   **Seamless chat integration with additional depth**      Integrates in the chat bar with better deep-dive as per business workflows, almost like generating a report from a single chat.*   **Reproducibility and Accuracy**      Ensures that there is little to no variance in the answer generated, no matter how many times the user asks with the same intent.**Feature Success Metrics:**  1.  90%+ queries answered using an analysis template2.  95%+ accuracy for all queries answered via an analysis template3.  99%+ reproducibility for all queries answered via an analysis template4.  30% faster responses through Smart flow cards compared to chat route (via landing page or chat tool)**Product Metrics:**  1.  10-20% engagement improvement (# queries asked)2.  30-40% satisfaction improvement (CSAT)",,1/5/2026 5:30,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142211,,UAT for New Smart Flow/Analysis Template artefact with stakeholders,"As a user, I need to see how improved smart flow responses will look and function so I can provide feedback on the design.",- Prototype demonstrates new responses with and without report artefacts and added interactions - User feedback collected,1/5/2026 5:30,1/9/2026 0:00,142210,user-research,Chatbar - https://www.figma.com/proto/I65qoJl2rJrp4wpJQdx202/Insights-Copilot---2025?page-id=53835%3A89061&node-id=53894-32000&viewport=1125%2C-181%2C0.05&t=J5lrCZS2qIekZTzS-1&scaling=contain&content-scaling=fixed&starting-point-node-id=53894%3A32000&show-proto-sidebar=1Smart Flow - https://www.figma.com/proto/I65qoJl2rJrp4wpJQdx202/Insights-Copilot---2025?page-id=53835%3A89061&node-id=53930-34808&viewport=833%2C-1722%2C0.13&t=fx9bciLxwnRhecB2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=53835%3A102087&show-proto-sidebar=1,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Natarajan, Nitin",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142215,,POC - Reference analysis_tool response in final response,"As a user, I need to easily refer to complex analysis reports in the responses from Insights Copilot so I can use them in business workflows","- Users can interact and follow-up on the reports within the response. Insights Copilot also understands that the response has report(s).  - Only complex ATs show up as reports. Segregate simple retrieval ATs and complex ATs (eg. get_brand_kpis vs get_country_highlights in BG).   - Response can refer to the report(s) eg. ```""I have prepared a detailed report for you which you can refer to below. <Report artefact link/object>""```- Users can open and read the reports when available   - More than one report scenario in a response is supported.- Users can copy the response and export the reports as PPT, PDF and Markdown for later use.- Reports persist across sessions, page refresh- Payload size should be within 1MB",1/5/2026 5:30,,142210,spike,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142217,,Markdown based Analysis Template/Smart Flow reports,"As a user, I need business analyses to be displayed in a clean, structured format so I can go through the report with ease of understanding.",- Analysis tool response is in markdown format with embedding/link inside the response- Sources (and citations) are handled properly within markdown,1/5/2026 5:30,,142210,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142242,,Smart Flows in new Agentic orchestration,"As a user, I want to trigger and run smartflows so that I can retrieve deep dive reports more reliably with high reproduciblity.",- Smart Flows are enabled in the Chat Bar even when Chat+ is enabled- Smart Flow is triggered with known AT function and parameters selected by the user in agentic orchestration- Results are summarized and report is attached along with the response according to #142215 ,1/5/2026 5:30,,142210,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142228,Interactive Charts,,"As a user, I want to request for charts and customizations and interact with them so I can explore trends with ease",,1/5/2026 5:30,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142422,,Plotly Chart customizations,,"* Finalize what customizations are possible to match the UX requirements
+* Distribute customizations between LLM (colour scheme) and UI (theme, font).
+  * Ensure minimal customizations are handled by UI to allow user to ask for customization via Chat.
+  * Expected UI customizations: Theme (Background \& Text colour), Font Family (Avantt), Font size
+  * Toolbar placement - Option 1 - outside chart area
+  * Toolbar placement - Option 2 - inside chart area as a collapsible toggle
+  * Expected LLM customizations (Chart Type, Chart Data, Colour scheme, Chart Name, Axes selection and name, Legends etc.)",1/5/2026 5:30,,142228,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Kullapareddy, Praneeth",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142229,Interactive Tables,,"As a user, I want to request for tables and table customizations and interact with them so that I can read the data with ease.",,1/5/2026 5:30,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142423,,Multiple tables and charts in same response,,"* Sequential positioning of table and chart in Markdown response. Eg. 
+Table 1
+Chart 1
+Table 2
+Chart 2
+...
+* AT artefact with accordions
+   * Inside accordions, re-enable tabbed groups of tables and charts 
+   * If tabs are not possible, then maintain sequential positioning",,,142229,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Kullapareddy, Praneeth",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142424,,Column Filters based on data type,,"* Data type identification for filters to work properly - numeric, datetime, string (currently defaults to string)",,,142229,,,User Story,2,\IC Sprint 2026-Sprint 1,New,New,"Kullapareddy, Praneeth",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142417,Multiple tool calling for retrieval,,"As a user,  I want responses from IC to select information from most relevant sources (unstructured, structured or internet) or combine with multiple sources so that I can have the most holistic answer",,,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,"Bhowmick, Rahul",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142418,,Performance test for usecases with multiple tool calling,,"* Test and collect feedback from respective usecase teams - BrewGPT S&P, LCP Coaching Assistant, CPG Intel  * BrewGPT S&P and LCP Coaching Assistant - GT curation for cases involving structured OR unstructured tool and cross-followups (structured turn 1 -> unstructured turn 2 and vice versa)  * CPG Intel - GT curation for cases involving unstructured OR/AND internet tool and cross-followups",,,142417,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142465,Multilingual Response (Agentic Orchestration),,,,,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142466,,Question to response language match,,"* Prompt revision to instruct LLM to maintain language
+* Check response language and terminology before sending final response
+   * Translate/improve response based on evaluation",,,142465,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142467,Citations (Agentic Orchestration),,,,,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142468,,Unstructured citations,,"* Responses are in markdown format with citations* Citations cover the document name, blob url, extracted chunk, page number* If part of the response, Blob URLs are formatted on UI to open inside IC",,,142467,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142469,,Internet citations,,* Responses are in markdown format with citations* Citations cover the external url and extracted chunk,,,142467,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142470,,Structured citations,,,,,142467,,,User Story,2,\,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142471,Metadata tool (Agentic Orchestration),,,,,,,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142472,,Responses related to Product and Usecase,,* Response context which is understandable by a business user. Prompts are currently referring to technical data such as table join information etc.* Knowledge base for a usecase only fetches information from the particular* Product knowledge base should not borrow information from usecases,,,142471,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,Kumar Mishra Suraj,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142595,Unstructured tool (Agentic Orchestration),,,,,,109940,,,Feature,1,\IC Sprint 2026-Sprint 1,New,New,"Bhowmick, Rahul",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142596,,Re-enable unstructured tool for existing usecases that use it,,,,,142595,,,Bug,1,\IC Sprint 2026-Sprint 1,New,New,"Bhowmick, Rahul",\Insight Copilot,Business,"Debnath, Sourav",,,,,,"* Unstructured tool enabled for following usecases in agentic
+```
+gai_copilot_ic_demo
+gai_copilot_check_and_coach
+gai_copilot_procurement_scfd_ghq
+gai_copilot_c2c_dpo
+gai_copilot_corporate_affairs_ghq
+gai_copilot_genai_for_o9
+gai_copilot_catexpert_qa_ghq
+gai_copilot_strategycomp_intel_ghq
+```
+ 
+* Internet tool enabled for 
+```
+gai_copilot_strategycomp_intel_ghq
+```",DEV,,,
+142782,,Langfuse roles with IC RBAC,,* Shared auth middleware with IC <> Langfuse  * Two possible approaches:     * ❌ Each Usecase as Project - more time needed but granular control (Phase 2 if needed)    * ✅Single project approach - simple implementation but risky since all access to everyone  * Standardized Nomenclature and access translation between IC and Langfuse,,,113673,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Ramachandra, Ashwini",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142783,,Langfuse governance framework,,"* RACI Matrix across core product and usecase teams to clarify roles and responsibilities
+* Governance process for reviewing the project access control and other features - tracing, annotation, testing and prompt management
+* Prepare Langfuse documentation for developers
+  * How to annotate trace
+  * How to maintain GT and run 
+  * How to update prompts
+* Prompt management Pre-requisite
+  * Clean up for system prompts - DONE
+  * Clean up for usecase prompts - BG",,,113673,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,"Ramachandra, Ashwini",\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142784,,Langfuse tracing and feedback management,,"* All traces from UI (all envs), local setup are captured
+* Feedback from UI (all envs) are captured against respective trace
+* Developer can view all feedback at a usecase level in one place",,,113673,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142785,,Langfuse for running tests and validation,,"* Testers can run questions in bulk
+* Each question can be validation using annotation",,,113673,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142786,,Langfuse for managing ground truth and benchmarking,,"* Ground truths for each usecase can be managed - read, update, delete
+* Cases with different complexities can be covered - turns, language, data sources etc.
+* Business users/developers can validate the question+response pair 
+* After every change, tests can be run to validate against ground truth as benchmark
+* Scores can help developers determine the change with ease",,,113673,,,User Story,1,\IC Sprint 2026-Sprint 1,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142787,,Langfuse for prompt management,,"* Prompts can be managed across environments - read, update, delete
+* Prompts can be viewed against traces
+*",,,113673,,,User Story,1,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142788,,Langfuse with SQLPad and Jupyter for codebase isolated development,,* Langfuse/SQLPad user flows to remove codebase touchpoints for usecase MLEs and remove dependecy on code migrations,,,113673,,,User Story,1,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142789,Loader (Agentic Orchestration),,,,,,109940,,,Feature,1,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142790,,Live response status,,* Loader state updates to the current step when it starts and ends with all intermediate information when step finishes (currently only updated when the step ends),,,142789,,,User Story,2,\IC Sprint 2026-Sprint 1,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142791,,Simplified execution logs,,"* Execution logs for each step is simplified for the user to go through
+* Relatable and relevant information in paragraph/clean formatting is used for ease of reading and explainability
+* Execution logs are retained in response for review from user on how the response was generated",,,142789,,,User Story,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142792,NL2SQL Tools (Agentic Orchestration),,,,,,109940,,,Feature,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142793,,IC NL2SQL improvement via Tredence POC,,"* Improved NL2SQL accuracy post integration
+* Config options for selecting primary and fallback tools - IC NL2SQL, DBRX Genie, Vanna",,,142792,,,User Story,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142795,Response Guardrails,,"* Planner prompts to include scope information from each usecase - Usecase MLEs* Basic prompt injection handled at OpenAI, ABI specific to be tested* Explore RLS",,,,109940,,,Feature,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142796,Caching and FSLs,,,,,,109940,,,Feature,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142797,Edit Question (Agentic Orchestration),,,,,,109940,,,Feature,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,
+142798,Regenerate Response (Agentic Orchestration),,,,,,109940,,,Feature,2,\IC Sprint 2026-Sprint 2,New,New,,\Insight Copilot,Business,"Debnath, Sourav",,,,,,,,,,

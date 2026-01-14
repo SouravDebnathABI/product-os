@@ -4,7 +4,7 @@
 **Insights Copilot** is AB InBev's proprietary AI-powered decision thought partner that helps managers and executives derive insights from their own business data using natural language questions and brainstorm iteratively or deep dive into concerns according to their existing workflow to take faster data-driven decisions.
 
 ## Target Customers
-All AB InBev employees can access Insights Copilot through SSO login, but access to specific use cases depends on role and permissions.
+All AB InBev employees can access Insights Copilot through SSO login, but access to specific use cases depends on role and permissions. Only approved users from departments like Marketing, Supply Chain, and Procurement can access relevant use cases configured for their business domain.
 
 **Primary User Personas:**
 - **Managers** seeking data-driven insights for operational decisions
@@ -42,7 +42,7 @@ With a single click, users can switch between different configured use cases (e.
 The user settings panel allows for preferences and customization. Users can manage their display language (English, Spanish, Portuguese), notification preferences, and analytics/reporting defaults. Soon, it will also support response personalization and memory, helping users tailor Insights Copilot to their work style or business priorities.
 
 ## Tech Stack
-- **Core LLM engine**: Langchain
+- **Core LLM engine**: Langchain based ReAct agent with Azure OpenAI GPT-4.1 model
 - **Service layer**: Asynchronous REST-based services built on FastAPI framework
 - **Response parser**: Python-based with Azure Functions
 - **Frontend**: React web app for conversation interface
